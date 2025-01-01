@@ -2,9 +2,11 @@
 export default function Input({ label, ...props }) {
   return (
     <>
-      <fieldset>
-        <label htmlFor={props.id}>{label}</label>
-        <input {...props} />
+      <fieldset className="flex flex-col gap-1">
+        <label className="w-full font-bold" htmlFor={props.id}>
+          {label}
+        </label>
+        <input className="w-full p-3 rounded-lg border bg-transparent" {...props} />
       </fieldset>
     </>
   );
