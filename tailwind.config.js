@@ -3,6 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     backgroundImage: {
+      "pattern-ticket": "url('/src/assets/images/pattern-ticket.svg')",
       mobile:
         "url('/src/assets/images/pattern-lines.svg'), url('/src/assets/images/pattern-squiggly-line-top.svg'), url('/src/assets/images/pattern-circle.svg'), url('/src/assets/images/pattern-squiggly-line-bottom.svg'), url('/src/assets/images/background-mobile.png')",
       tablet:
@@ -11,7 +12,7 @@ export default {
         "url('/src/assets/images/pattern-lines.svg'), url('/src/assets/images/pattern-squiggly-line-top.svg'), url('/src/assets/images/pattern-circle.svg'), url('/src/assets/images/pattern-squiggly-line-bottom.svg'), url('/src/assets/images/background-desktop.png')",
     },
     backgroundPosition: {
-      "position": "top, top right, center, bottom left, center",
+      position: "top, top right, center, bottom left, center",
     },
   },
   plugins: [],

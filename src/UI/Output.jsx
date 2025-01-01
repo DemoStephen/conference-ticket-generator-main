@@ -1,6 +1,6 @@
 export default function Output() {
   return (
-    <section>
+    <section className="bg-pattern-ticket bg-no-repeat bg-cover">
       <div>
         <article>
           <img src="" alt="logo" />
