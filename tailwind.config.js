@@ -3,15 +3,15 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     backgroundImage: {
-      "desktop-bg": "url(/src/assets/images/background-desktop.png)",
-      "tablet-bg": "url(/src/assets/images/background-tablet.png)",
-      "mobile-bg": "url(/src/assets/images/background-mobile.png)",
-      "pattern-line": "url(/src/assets/images/pattern-lines.svg)",
-      "pattern-circle": "url(/src/assets/images/pattern-circle.svg)",
-      "pattern-squiggly-line-bottom":
-        "url(/src/assets/images/pattern-squiggly-line-bottom.svg)",
-      "pattern-squiggly-line-top":
-        "url(/src/assets/images/pattern-squiggly-line-top.svg)",
+      mobile:
+        "url('/src/assets/images/pattern-lines.svg'), url('/src/assets/images/pattern-squiggly-line-top.svg'), url('/src/assets/images/pattern-circle.svg'), url('/src/assets/images/pattern-squiggly-line-bottom.svg'), url('/src/assets/images/background-mobile.png')",
+      tablet:
+        "url('/src/assets/images/pattern-lines.svg'), url('/src/assets/images/pattern-squiggly-line-top.svg'), url('/src/assets/images/pattern-circle.svg'), url('/src/assets/images/pattern-squiggly-line-bottom.svg'), url('/src/assets/images/background-tablet.png')",
+      desktop:
+        "url('/src/assets/images/pattern-lines.svg'), url('/src/assets/images/pattern-squiggly-line-top.svg'), url('/src/assets/images/pattern-circle.svg'), url('/src/assets/images/pattern-squiggly-line-bottom.svg'), url('/src/assets/images/background-desktop.png')",
+    },
+    backgroundPosition: {
+      "position": "top, top right, center, bottom left, center",
     },
   },
   plugins: [],
