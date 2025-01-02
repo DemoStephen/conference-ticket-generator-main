@@ -6,8 +6,8 @@ function App() {
   return (
     <>
       <Header />
-      {/* <Form /> */}
-      <Output />
+      <Form />
+      {/* <Output /> */}
     </>
   );
 }
