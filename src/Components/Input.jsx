@@ -6,7 +6,10 @@ export default function Input({ label, ...props }) {
         <label className="w-full font-bold" htmlFor={props.id}>
           {label}
         </label>
-        <input className="w-full p-3 rounded-lg border bg-transparent" {...props} />
+        <input
+          className="w-full p-3 rounded-lg border bg-transparent"
+          {...props}
+        />
       </fieldset>
     </>
   );
