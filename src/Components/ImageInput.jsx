@@ -1,6 +1,16 @@
+import { useState } from "react";
 import info from "../assets/images/icon-info.svg";
 import upload from "../assets/images/icon-upload.svg";
 export default function ImageInput() {
+  const [imageUrl, setImageUrl] = useState();
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setImageUrl(url);
+    }
+  };
+
   return (
     <>
       <fieldset>
@@ -11,6 +21,7 @@ export default function ImageInput() {
           type="file"
           name="upload-image"
           id="upload-image"
+          onChange={handleImageUpload}
           className="hidden"
         />
         <label
@@ -18,8 +29,8 @@ export default function ImageInput() {
           className="block text-center p-4 border border-dashed rounded-lg mb-2"
         >
           <img
-            className="p-2 rounded-md mx-auto mb-4 border"
-            src={upload}
+            className="p-2 rounded-md mx-auto mb-4 border w-1/5"
+            src={imageUrl ?? upload}
             alt="upload icon"
           />
           <p>Drag and drop or click to upload</p>
