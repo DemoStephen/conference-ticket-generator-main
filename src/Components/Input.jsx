@@ -7,7 +7,7 @@ export default function Input({ label, ...props }) {
           {label}
         </label>
         <input
-          className="w-full p-3 rounded-lg border bg-transparent"
+          className="w-full p-4 rounded-lg border bg-transparent"
           {...props}
         />
       </fieldset>

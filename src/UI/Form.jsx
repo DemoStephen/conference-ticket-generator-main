@@ -8,7 +8,13 @@ export default function Form() {
       className="w-5/6 md:w-4/5 lg:w-3/6 m-auto flex flex-col gap-4"
     >
       <ImageInput />
-      <Input label="Full Name" id="full-name" type="text" name="full-name" />
+      <Input
+        label="Full Name"
+        id="full-name"
+        type="text"
+        name="full-name"
+        placeholder="Stephen Adewale"
+      />
       <Input
         label="Email Name"
         id="email-name"
