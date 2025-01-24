@@ -13,10 +13,12 @@ export default {
     },
     backgroundPosition: {
       position: "top, top right, center, bottom left, center",
+      center: "center"
     },
     backgroundSize: {
       desktopSize: "auto",
       mobileSize: "auto, 60%, auto, 60%, auto",
+      contain: "contain"
     },
   },
   plugins: [],
