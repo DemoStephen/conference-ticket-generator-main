@@ -14,6 +14,10 @@ export default {
     backgroundPosition: {
       position: "top, top right, center, bottom left, center",
     },
+    backgroundSize: {
+      desktopSize: "auto",
+      mobileSize: "auto, 60%, auto, 60%, auto",
+    },
   },
   plugins: [],
 };
