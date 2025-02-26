@@ -4,20 +4,22 @@ import Input from "../Components/Input";
 export default function Form() {
   return (
     <form className="w-5/6 md:w-4/5 lg:w-3/6 m-auto flex flex-col gap-4">
-      <ImageInput />
+      <ImageInput err={null} />
       <Input
         label="Full Name"
         id="full-name"
         type="text"
-        name="full-name"
+        name="name"
         placeholder="Stephen Adewale"
+        err={null}
       />
       <Input
         label="Email Name"
         id="email-name"
         type="email"
-        name="email-name"
+        name="email"
         placeholder="codewithme.stephen@gmail.com"
+        err={null}
       />
       <Input
         label="GitHub Username"
@@ -25,6 +27,7 @@ export default function Form() {
         type="text"
         name="github"
         placeholder="@demostephen"
+        err={null}
       />
       <button
         type="submit"
