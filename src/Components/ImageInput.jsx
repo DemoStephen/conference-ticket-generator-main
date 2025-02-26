@@ -1,7 +1,7 @@
 import { useState } from "react";
 import info from "../assets/images/icon-info.svg";
 import upload from "../assets/images/icon-upload.svg";
-export default function ImageInput() {
+export default function ImageInput({ err }) {
   const [imageUrl, setImageUrl] = useState();
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
@@ -34,7 +34,7 @@ export default function ImageInput() {
         />
         <p>Drag and drop or click to upload</p>
       </label>
-      <p className="flex items-center gap-2">
+      <p className={`${err ? "flex" : "hidden"} text-red-400 items-center gap-2`}>
         <img src={info} alt="info" />
         <small>Upload your photo (JPG or PNG, max size: 500KB).</small>
       </p>
