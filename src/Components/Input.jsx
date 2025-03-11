@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 export default function Input({ label, err, ...props }) {
   return (
     <fieldset className="flex flex-col gap-1">
