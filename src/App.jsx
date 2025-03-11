@@ -6,21 +6,29 @@ import Output from "./UI/Output";
 export default function App() {
   const [info, setInfo] = useState({
     image: null,
-    view: null,
     name: "Stephen Adewale",
     github: "@demostephen",
     email: "codewithme.stephen@gmail.com",
   });
-  function handleInfo([id, value]) {
-    setInfo({
-      ...prev,
-      id: [value],
-    });
+
+  const [view, setView] = useState(null);
+
+  function handleInfo(info) {
+    setInfo(info);
   }
+
+  function handleView() {
+    setView(true);
+  }
+
   return (
     <>
       <Header data={info} />
-      {info.view ? <Output data={info} /> : <Form />}
+      {view ? (
+        <Output data={info} />
+      ) : (
+        <Form handleView={handleView} handleInfo={handleInfo} />
+      )}
     </>
   );
 }
