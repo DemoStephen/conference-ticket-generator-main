@@ -21,7 +21,6 @@ body {
       url("./assets/images/pattern-squiggly-line-bottom.svg"),
       url("./assets/images/background-tablet.png");
     background-size: auto, auto, auto, auto, cover;
-    background-color: red;
   }
 }
 @media (min-width: 1024px) {
