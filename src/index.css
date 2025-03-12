@@ -1,32 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 @import "tailwindcss";
 
-@theme{
+/* 
 
-  --mobile-bg: background-image: url("./assets/images/pattern-lines.svg"),
-                                  url("./assets/images/pattern-squiggly-line-top.svg"),
-                                  url("./assets/images/pattern-circle.svg"),
-                                  url("./assets/images/pattern-squiggly-line-bottom.svg"),
-                                  url("./assets/images/background-mobile.png");
-  --mobile-size: "auto, 60%, auto, 60%, cover";
-  --mobile-position: top, top right, center, bottom left, center;
-  
-  --tablet-image: url("./assets/images/pattern-lines.svg"),
-                  url("./assets/images/pattern-squiggly-line-top.svg"),
-                  url("./assets/images/pattern-circle.svg"),
-                  url("./assets/images/pattern-squiggly-line-bottom.svg"),
-                  url("./assets/images/background-tablet.png");
-  --tablet-size: auto, auto, auto, auto, cover;
+extend: {
+  backgroundimage: {
+    --mobile-bg: url("./assets/images/pattern-lines.svg"),
+      url("./assets/images/pattern-squiggly-line-top.svg"),
+      url("./assets/images/pattern-circle.svg"),
+      url("./assets/images/pattern-squiggly-line-bottom.svg"),
+      url("./assets/images/background-mobile.png");
 
+    --tablet-image: url("./assets/images/pattern-lines.svg"),
+      url("./assets/images/pattern-squiggly-line-top.svg"),
+      url("./assets/images/pattern-circle.svg"),
+      url("./assets/images/pattern-squiggly-line-bottom.svg"),
+      url("./assets/images/background-tablet.png");
 
-  --desktop-image: url("./assets/images/pattern-lines.svg"),
-                    url("./assets/images/pattern-squiggly-line-top.svg"),
-                    url("./assets/images/pattern-circle.svg"),
-                    url("./assets/images/pattern-squiggly-line-bottom.svg"),
-                    url("./assets/images/background-desktop.png");
-  --desktop-size: auto, auto, auto, auto, cover;
+    --desktop-image: url("./assets/images/pattern-lines.svg"),
+      url("./assets/images/pattern-squiggly-line-top.svg"),
+      url("./assets/images/pattern-circle.svg"),
+      url("./assets/images/pattern-squiggly-line-bottom.svg"),
+      url("./assets/images/background-desktop.png");
+  }
+  ,
+  backgroundsize: {
+    --mobile-size: "auto, 60%, auto, 60%, cover";
+    --tablet-size: auto, auto, auto, auto, cover;
+    --desktop-size: auto, auto, auto, auto, cover;
+  }
+  ,
+  backgroundposition: {
+    --mobile-position: top, top right, center, bottom left, center;
+  }
 }
-/*
+
+ */
+
 body {
+  font-family: "Inconsolata", monospace;
   background-image: url("./assets/images/pattern-lines.svg"),
     url("./assets/images/pattern-squiggly-line-top.svg"),
     url("./assets/images/pattern-circle.svg"),
@@ -34,13 +46,12 @@ body {
     url("./assets/images/background-mobile.png");
   background-size: "auto, 60%, auto, 60%, cover";
   background-position: top, top right, center, bottom left, center;
-
-  --ticket-bg: url("./assets/images/pattern-ticket.svg");
 }
 
- #ticket {
+#ticket {
   background-image: url("./assets/images/pattern-ticket.svg");
-} 
+}
+
 @media (min-width: 768px) {
   body {
     background-image: url("./assets/images/pattern-lines.svg"),
@@ -51,6 +62,7 @@ body {
     background-size: auto, auto, auto, auto, cover;
   }
 }
+
 @media (min-width: 1024px) {
   body {
     background-image: url("./assets/images/pattern-lines.svg"),
@@ -61,4 +73,3 @@ body {
     background-size: auto, auto, auto, auto, cover;
   }
 }
-*/
