@@ -5,16 +5,20 @@ import Output from "./UI/Output";
 
 export default function App() {
   const [formData, setFormData] = useState({
-    image: null,
+    image: "",
     name: "Stephen Adewale",
     github: "@demostephen",
-    email: "codewithme.stephen@gmail.com",
+    email: "stephen@codewithstephen.com",
   });
+
+  const handleFormSubmit = (data) => {
+    setFormData(data);
+  };
 
   return (
     <>
       <Header data={formData} />
-      <Form />
+      <Form onSubmit={handleFormSubmit} />
       <Output data={formData} />
     </>
   );
