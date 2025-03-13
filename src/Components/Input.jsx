@@ -20,7 +20,7 @@ export default function Input({
         className={`${
           imageInput
             ? "hidden"
-            : `w-full p-4 rounded-lg border ${
+            : `w-full p-4 rounded-lg border focus:border-transparent outline-0 focus:outline-2 focus:outline-purple-700 ${
                 err ? "border-red-400" : ""
               } bg-transparent`
         }`}
