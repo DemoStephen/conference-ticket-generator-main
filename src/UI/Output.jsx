@@ -6,7 +6,11 @@ const date = new Date().toLocaleDateString("en-En", {
   month: "short",
   day: "numeric",
 });
+function generateRandomNumber() {
+  return Math.floor(Math.random() * 999999) + 1;
+}
 export default function Output({ data }) {
+  const ticketNumber = generateRandomNumber();
   return (
     <>
       <section className="w-5/6 md:w-4/5 lg:w-3/6 m-auto">
@@ -40,7 +44,7 @@ export default function Output({ data }) {
               </header>
             </article>
           </div>
-          <p className="text-2xl font-bold rotate-90">#012206</p>
+          <p className="text-2xl font-bold rotate-90">#{ticketNumber}</p>
         </article>
       </section>
     </>
