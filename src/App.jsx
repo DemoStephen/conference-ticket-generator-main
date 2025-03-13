@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <>
-      <Header data={formData} />
+      <Header data={formData} submitted={submitted} />
       {submitted ? (
         <Output data={formData} />
       ) : (
