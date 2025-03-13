@@ -9,6 +9,7 @@ export default function App() {
     name: "Stephen Adewale",
     github: "@demostephen",
     email: "stephen@codewithstephen.com",
+    feedback: null,
   });
 
   const handleFormSubmit = (data) => {
@@ -18,8 +19,8 @@ export default function App() {
   return (
     <>
       <Header data={formData} />
-      <Form onSubmit={handleFormSubmit} />
-      <Output data={formData} />
+      {!formData.feedback ?? <Output data={formData} />}
+      {formData.feedback ?? <Form onSubmit={handleFormSubmit} />}
     </>
   );
 }

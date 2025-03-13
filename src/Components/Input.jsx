@@ -17,13 +17,13 @@ export default function Input({ imageInput, label, err, ...props }) {
                 err ? "border-red-400" : ""
               } bg-transparent`
         }`}
-        required
+        // required
         {...props}
       />
       {imageInput ? (
         <>
           <label
-            htmlFor="upload-image"
+            htmlFor={props.id}
             className="block text-center p-4 border border-dashed rounded-lg mb-2"
           >
             <img
@@ -33,22 +33,27 @@ export default function Input({ imageInput, label, err, ...props }) {
             />
             <p>Drag and drop or click to upload</p>
           </label>
-          <span
-            className={`${
-              err ? "flex" : "hidden"
-            } text-red-400 items-center gap-2`}
-          >
+        </>
+      ) : (
+        ""
+      )}
+
+      <span
+        className={`text-red-400 ${
+          imageInput ? "flex items-center gap-2 " : ""
+        } ${err ? "" : "hidden"}`}
+      >
+        {imageInput ? (
+          <>
             <img src={info} alt="info" />
             <small className="text-xs md:text-sm">
               Upload your photo (JPG or PNG, max size: 500KB).
             </small>
-          </span>
-        </>
-      ) : (
-        <span className="text-red-400">
-          {err ? `${props.name} required` : ""}
-        </span>
-      )}
+          </>
+        ) : (
+          <>{props.name} required</>
+        )}
+      </span>
     </fieldset>
   );
 }
