@@ -1,6 +1,13 @@
 import upload from "../assets/images/icon-upload.svg";
 import info from "../assets/images/icon-info.svg";
-export default function Input({ imageInput, label, err, ...props }) {
+export default function Input({
+  imageInput,
+  onFileChange,
+  filePath,
+  label,
+  err,
+  ...props
+}) {
   return (
     <fieldset className={imageInput ? "" : "flex flex-col gap-1"}>
       <label
@@ -17,7 +24,7 @@ export default function Input({ imageInput, label, err, ...props }) {
                 err ? "border-red-400" : ""
               } bg-transparent`
         }`}
-        // required
+        onChange={imageInput ? onFileChange : undefined}
         {...props}
       />
       {imageInput ? (
@@ -28,7 +35,7 @@ export default function Input({ imageInput, label, err, ...props }) {
           >
             <img
               className="p-2 rounded-md mx-auto mb-4 border w-1/5"
-              src={upload}
+              src={filePath ? filePath : upload}
               alt="upload icon"
             />
             <p>Drag and drop or click to upload</p>
