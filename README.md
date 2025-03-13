@@ -1,6 +1,6 @@
 # Conference ticket generator solution
 
-This is a solution to the Conference ticket generator challenge on [Frontend Mentor](https://www.frontendmentor.io/challenges/conference-ticket-generator-oq5gFIU12w). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is my solution to the Conference ticket generator challenge on [Frontend Mentor](https://www.frontendmentor.io/challenges/conference-ticket-generator-oq5gFIU12w). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -48,10 +48,11 @@ Users should be able to:
 
 ### Useful resources
 
-- [Example resource 2](https://medium.com) - This is an amazing article which helped me finally understand Image previewer in react. I'd recommend it to anyone still learning this concept.
+- [Medium](https://medium.com) - This is an amazing article which helped me finally understand Image previewer in react. I'd recommend it to anyone still learning this concept.
 
 ## Author
 
 - Website - [Stephen Adewale Nifemi](https://codewithstephen.vercel.app/)
 - Frontend Mentor - [@demostephen](https://www.frontendmentor.io/profile/demostephen)
 - Twitter - [@codewithstephen](https://www.twitter.com/codewithstephen)
+- Facebook - [@Stephen Adewale Nifemi](https://web.facebook.com/Inventorstephen/)
