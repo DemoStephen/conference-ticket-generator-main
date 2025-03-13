@@ -27,7 +27,7 @@ export default function Output({ data }) {
             </article>
             <article className="flex items-center gap-3">
               <img
-                className="w-12 md:w-14 rounded-md"
+                className="w-12 h-12 md:w-14 md:h-14 rounded-md"
                 src={data.image ? data.image : avater}
                 alt="logo"
               />
