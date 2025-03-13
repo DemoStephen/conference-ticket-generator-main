@@ -19,8 +19,11 @@ export default function App() {
   return (
     <>
       <Header data={formData} />
-      {!formData.feedback ?? <Output data={formData} />}
-      {formData.feedback ?? <Form onSubmit={handleFormSubmit} />}
+      {formData.feedback ? (
+        <Output data={formData} />
+      ) : (
+        <Form onSubmit={handleFormSubmit} />
+      )}
     </>
   );
 }
