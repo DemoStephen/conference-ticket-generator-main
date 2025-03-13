@@ -9,17 +9,20 @@ export default function App() {
     name: "Stephen Adewale",
     github: "@demostephen",
     email: "stephen@codewithstephen.com",
-    feedback: null,
   });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleFormSubmit = (data) => {
     setFormData(data);
+    setTimeout(() => {
+      setSubmitted(true);
+    }, 1000);
   };
 
   return (
     <>
       <Header data={formData} />
-      {formData.feedback ? (
+      {submitted ? (
         <Output data={formData} />
       ) : (
         <Form onSubmit={handleFormSubmit} />
