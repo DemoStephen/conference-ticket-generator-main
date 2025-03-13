@@ -37,11 +37,26 @@ export default function Form({ onSubmit }) {
 
   function handleFileChange(e) {
     const file = e.target.files[0];
-    const filePath = file ? URL.createObjectURL(file) : null;
-    setFormState((prevState) => ({
-      ...prevState,
-      image: filePath,
-    }));
+    if (file && file.type.startsWith("image/")) {
+      const filePath = URL.createObjectURL(file);
+      setFormState((prevState) => ({
+        ...prevState,
+        image: filePath,
+      }));
+      setErr((prevErr) => ({
+        ...prevErr,
+        image: null,
+      }));
+    } else {
+      setFormState((prevState) => ({
+        ...prevState,
+        image: "",
+      }));
+      setErr((prevErr) => ({
+        ...prevErr,
+        image: true,
+      }));
+    }
   }
 
   function handleErr() {
