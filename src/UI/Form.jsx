@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Input from "../Components/Input";
+const EMAIL_REGEX = /\S+@\S+\.\S+/;
 
 export default function Form({ onSubmit }) {
   const [formState, setFormState] = useState({
@@ -7,7 +8,6 @@ export default function Form({ onSubmit }) {
     name: "",
     github: "",
     email: "",
-    feedback: null,
   });
 
   const [err, setErr] = useState({
@@ -17,26 +17,28 @@ export default function Form({ onSubmit }) {
     email: null,
   });
 
-  function validateInputs(formData) {
+  const [loading, setLoading] = useState(false);
+
+  function validateInputs({ image, name, github, email }) {
     const newErr = {
-      image: !formData.image,
-      name: formData.name.trim() === "",
-      github: formData.github.trim() === "",
-      email: !/\S+@\S+\.\S+/.test(formData.email),
+      image: !image,
+      name: name.trim() === "",
+      github: github.trim() === "",
+      email: !EMAIL_REGEX.test(email),
     };
     setErr(newErr);
+    return !Object.values(newErr).some(Boolean);
   }
 
-  function handleChange(e) {
-    const { name, value } = e.target;
+  function handleChange({ target: { name, value } }) {
     setFormState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   }
 
-  function handleFileChange(e) {
-    const file = e.target.files[0];
+  function handleFileChange({ target: { files } }) {
+    const file = files[0];
     if (file && file.type.startsWith("image/")) {
       const filePath = URL.createObjectURL(file);
       setFormState((prevState) => ({
@@ -59,17 +61,15 @@ export default function Form({ onSubmit }) {
     }
   }
 
-  function handleErr() {
-    validateInputs(formState);
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
-    handleErr();
-    if (!err.image && !err.github && !err.email && !err.name) {
+    if (validateInputs(formState)) {
+      setLoading(true);
       onSubmit(formState);
-      setFormState((prev) => ({ ...prev, feedback: true }));
-      console.log(formState);
+      console.log("Form submitted successfully:", formState);
+    } else {
+      setLoading(false);
+      console.log("Form submission failed due to validation errors.");
     }
   }
 
@@ -121,8 +121,9 @@ export default function Form({ onSubmit }) {
       <button
         type="submit"
         className="bg-orange-500 hover:bg-orange-600 text-slate-900 p-3 rounded-lg font-extrabold cursor-pointer"
+        disabled={loading}
       >
-        Generate My Ticket
+        {loading ? "Generating Ticket..." : "Generate My Ticket"}
       </button>
     </form>
   );
