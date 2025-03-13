@@ -1,7 +1,6 @@
 import shortLogo from "../assets/images/logo-mark.svg";
 import avater from "../assets/images/image-avatar.jpg";
 import github from "../assets/images/icon-github.svg";
-import ticket from "../assets/images/pattern-ticket.svg";
 const date = new Date().toLocaleDateString("en-En", {
   year: "numeric",
   month: "short",
@@ -12,7 +11,6 @@ export default function Output({ data }) {
     <>
       <section className="w-5/6 md:w-4/5 lg:w-3/6 m-auto">
         <article
-          style={{ backgroundImage: `url(${ticket})` }}
           id="ticket"
           className="max-w-80 md:max-w-full bg-center bg-contain bg-no-repeat m-auto flex items-center justify-between"
         >
