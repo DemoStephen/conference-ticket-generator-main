@@ -17,33 +17,47 @@ export default function Form({ onSubmit }) {
     email: null,
   });
 
-  const validateInputs = (formData) => {
+  function validateInputs(formData) {
     const newErr = {
       image: !formData.image,
-      name: !formData.name,
-      github: !formData.github,
-      email: !formData.email,
+      name: formData.name.trim() === "",
+      github: formData.github.trim() === "",
+      email: !/\S+@\S+\.\S+/.test(formData.email),
     };
     setErr(newErr);
-  };
+  }
 
-  const handleChange = (e) => {
+  function handleChange(e) {
     const { name, value } = e.target;
     setFormState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-  };
+  }
 
-  const handleSubmit = (e) => {
+  function handleFileChange(e) {
+    const file = e.target.files[0];
+    const filePath = file ? URL.createObjectURL(file) : null;
+    setFormState((prevState) => ({
+      ...prevState,
+      image: filePath,
+    }));
+  }
+
+  function handleErr() {
+    validateInputs(formState);
+  }
+
+  function handleSubmit(e) {
     e.preventDefault();
+    handleErr();
     if (!err.image && !err.github && !err.email && !err.name) {
-      setFormState((prev) => ({ ...prev, feedback: true }));
       onSubmit(formState);
+      setFormState((prev) => ({ ...prev, feedback: true }));
       console.log(formState);
     }
-    validateInputs(formState);
-  };
+  }
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -56,8 +70,8 @@ export default function Form({ onSubmit }) {
         type="file"
         name="upload-image"
         err={err.image}
-        onChange={handleChange}
-        value={formState.image}
+        onFileChange={handleFileChange}
+        filePath={formState.image ?? ""}
       />
       <Input
         label="Full Name"
